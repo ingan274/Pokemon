@@ -1,17 +1,17 @@
-# Pokemon | Catch 'Em All
-Pokemon themes RPG game! Select your Pokemon and see if you can catch them all! 
+# Pokémon | Catch 'Em All
+Pokémon themes RPG game! Select your Pokémon and see if you can catch them all! 
 
 # How to play
 Select the character that you want to play as.
 
-Each character has a given base attack power. Every time you attack an opponent, your attack power increases by your base attack power (e.g. if your base attack power is 5, your first attack will inflict 5 damage, your second attack 10, and so on).
+Each Pokémon has a given base attack power. Every time you attack another Pokémon, your attack power increases by your base attack power (e.g. if your base attack power is 5, your first attack will inflict 5 damage, your second attack 10, and so on).
 After you attack, your opponent will counter-attack you. Each opponent has a different given counter-attack power. Counter-attack power does not increase.
 
-No player can heal throughout the game.
+No Pokémon can heal throughout the game.
 
 Beat the three opponents in any order you want, one at a time, to win the game. Choose wisely to build up your attack power!
 
-If you die, you lose!
+If you are injured, you must retreat to a PokéCenter!
 
 # About this game
 Week 4 assigment for the June 2019 cohort of the UCLA Coding Boot Camp. Built using jQuery.
