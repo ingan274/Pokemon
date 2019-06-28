@@ -1,4 +1,4 @@
-# Pokemon
+# Pokemon | Catch 'Em All
 Select your Pokemon and see if you can catch them all!
 
 # How to play
