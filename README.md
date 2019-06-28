@@ -1,5 +1,5 @@
 # Pokemon | Catch 'Em All
-Select your Pokemon and see if you can catch them all!
+Pokemon themes RPG game! Select your Pokemon and see if you can catch them all! 
 
 # How to play
 Select the character that you want to play as.
