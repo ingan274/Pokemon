@@ -1,97 +1,63 @@
 // Game controls:
-// 1. Generate a random number for the user to "get"
-// 2. Assign a points to each object
-// 3. Display object points only when clicked on
-// 4. Ater a object is clicked, add points together and display total score.
-// 5. When added score reaches the same number as the random score, user wins.
-// 6. When addes score reaches over the same number as the random score,, user losses.
-// 7. Each time when the game starts, the game will change the values of each crystal.
+// 1. Select Pokemon
+// 2. Select Opponent
+// 3. When clicking on "attack," attach will double and my HP will go down with their attach
+// 4. WIN - opponent will leave the screen 
+// 4A. Player selects new opponent
+// 5. LOSE - game is reset
 
 $(document).ready(function () {
-    // 0. Fun Game Set Up
-    // Play Button
-    $('#startbutton').on("click", function () {
-        $('.game').show();
-        $('#startbutton').hide();
-        $('.objectstopress').hide();
-        $('.winlose').hide();
-    });
+// 1. Select Pokemon
+// pokemon Array
 
-    // Generate Number Button
-    $('#showbutton').on("click", function () {
-        $('#showbutton').hide();
-        $('#randomanswer').text(goalNumber);
-        $('.objectstopress').show();
-        $('.winlose').show();
-    });
+var pokemon = [
+    {
+        name:'charmander';
+        hp: 139;
+        attack: 2;
+        counterattack: 3;
+        img: '../assets/img/charmander.png'
+    },
+    {
+        name: 'dugtrio';
+        hp: 135;
+        attack: 10;
+        counterattack: 6;
+        img: '../assets/img/dugtrio.png'
+    },
+    {
+        name: 'eevee';
+        hp: 155;
+        attack: 5;
+        counterattack: 10;
+        img: '../assets/img/eve.png'
+    },
+    {
+        name: 'persian';
+        hp: 165;
+        attack: 10;
+        counterattack: 10;
+        img: '../assets/img/persian.png'
+    },
+    {
+        name: 'pikachu';
+        hp: 135;
+        attack: 15;
+        counterattack: 10;
+        img: '../assets/img/pikachu.png'
+    },
+    {
+        name: 'wailmer';
+        hp: 230;
+        attack: 12;
+        counterattack: 5;
+        img: '../assets/img/wailmer.png'
+    },
+]
+// 2. Select Opponent
+// 3. When clicking on "attack," attach will double and my HP will go down with their attach
+// 4. WIN - opponent will leave the screen 
+// 4A. Player selects new opponent
+// 5. LOSE - game is reset
 
-    // 1. Generate a random number for the user to "get"
-    var goalNumber = Math.floor(Math.random() * 61) + 40;
-
-    // 2. Assign a points to each object
-
-    var shellValue = Math.floor(Math.random() * 10) + 1;
-    var starValue = Math.floor(Math.random() * 10) + 1;
-    var mushroomValue = Math.floor(Math.random() * 10) + 1;
-    var bananaValue = Math.floor(Math.random() * 10) + 1;
-
-    // 3. Display object points only when clicked on
-    $("img").addClass('indObject');
-
-    $(function () {
-        $("#shell").attr("value", shellValue);
-        $("#star").attr("value", starValue);
-        $("#mushroom").attr("value", mushroomValue);
-        $("#banana").attr("value", bananaValue);
-    })
-
-    // 4. Ater a object is clicked, add points together and display total score
-    // user counter
-    var counter = 0;
-    // Win/Lose Variables
-    var gameWin = 0;
-    console.log(gameWin)
-    // WHY IS MY GAME WIN AND LOSE NOT SHOWING UP???????
-    $("#yay").text(gameWin);
-    var gameLose = 0;
-    $("#nay").text(gameLose);
-
-    $('.indObject').click(function () {
-        counter = Number(counter) + Number($(this).attr("value"));
-        $("#usernumber").text(counter);
-
-        // 5. When added score reaches the same number as the random score, user wins
-        if (counter === goalNumber) {
-            gameWin++;
-            reset()
-            $("#yay").text(gameWin);
-            alert("Great Job! You Won!")
-        }
-
-        // 6. When addes score reaches over the same number as the random score,, user losses
-        else if (counter >= goalNumber) {
-            gameLose++;
-            reset()
-            $("#nay").text(gameLose);
-            alert("Oops! You went too far over! Try again next time.")
-        }
-    });
-
-    // 7. Each time when the game starts, the game will change the values of each crystal
-    function reset() {
-        // 1. Reset number for the user to "get"
-        var goalNumber = Math.floor(Math.random() * 61) + 40;
-        $('#randomanswer').text(goalNumber);
-
-        // 2. Reassign a points to each object
-        var shellValue = Math.floor(Math.random() * 10) + 1;
-        var starValue = Math.floor(Math.random() * 10) + 1;
-        var mushroomValue = Math.floor(Math.random() * 10) + 1;
-        var bananaValue = Math.floor(Math.random() * 10) + 1;
-
-        // 3. setting counter to 0
-        counter = 0
-        $("#usernumber").text(counter);
-
-    }
 });

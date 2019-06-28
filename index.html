@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mario Count</title>
+    <title>Catch 'Em All | Pokemon</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/pokemon.css">
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P|Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P|Rubik+Mono+One&display=swap"
+        rel="stylesheet">
 
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -22,7 +23,30 @@
 </head>
 
 <body>
-    
+    <header class=head>
+        <h2>Catch 'Em All | RPG Game</h2>
+    </header>
+
+    <section class='instructions'>
+        <p class='instruct title'> Select your Pokémon </p>
+    </section>
+
+    <section class='gameboard container-fluid'>
+        <div class='row'>
+            <div class='playerarea col-4'>
+                <p class='ptitle title'> Select your Pokémon </p>
+            </div>
+
+            <div class='opponentarea col-4'>
+                <p class='ptitle title ' > The Pokémon You're Battling </p>
+            </div>
+
+            <div class='remaining col-4'>
+                <p class='ptitle title'> Remaining Pokémon </p>
+            </div>
+        </div>
+
+    </section>
     <script type="text/javascript" src="assets/js/pokemon.js"></script>
 </body>
 
