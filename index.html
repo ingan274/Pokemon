@@ -27,25 +27,33 @@
         <h2>Catch 'Em All | RPG Game</h2>
     </header>
 
-    <section class='instructions'>
-        <p class='instruct title'> Select your Pokémon </p>
-    </section>
+    <button class='startbutton'>Play</button>
 
-    <section class='gameboard container-fluid'>
-        <div class='row'>
-            <div class='playerarea col-4'>
-                <p class='ptitle title'> Select your Pokémon </p>
+    <section class='game'>
+        <section class='instructions container-fluid'>
+            <p class='instruct title'> Select your Pokémon </p>
+            <div class='row'>
+                <div class='col-2'></div>
+                <div class='allPoke col-8'></div>
+                <div class='col-2'></div>
+            </div>
+        </section>
+        <section class='gameboard container-fluid'>
+            <div class='row'>
+                <div class='playerarea col-4'>
+                    <p class='ptitle title'> Your Selected Pokémon </p>
+                </div>
+
+                <div class='opponentarea col-4'>
+                    <p class='ptitle title'> The Pokémon You're Battling </p>
+                </div>
+
+                <div class='remaining col-4'>
+                    <p class='ptitle title'> Remaining Pokémon </p>
+                </div>
             </div>
 
-            <div class='opponentarea col-4'>
-                <p class='ptitle title ' > The Pokémon You're Battling </p>
-            </div>
-
-            <div class='remaining col-4'>
-                <p class='ptitle title'> Remaining Pokémon </p>
-            </div>
-        </div>
-
+        </section>
     </section>
     <script type="text/javascript" src="assets/js/pokemon.js"></script>
 </body>

@@ -16,7 +16,37 @@ font-family: 'Bangers', cursive; */
 }
 body {
     background: url(../img/pokeback.jpg);
-    background-size: cover;
+    background-size: 120%;
+}
+
+/* Start Button */
+
+.startbutton {
+    display: block;
+    margin: 6px auto;
+    margin-top: 250px;
+    text-align: center;    
+    padding: 40px 5px 40px 5px;
+    width: 30%;
+    border-radius: 10px;
+
+    color: black;
+    font-family: var(--title1-font);
+    font-size: 50pt;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 5px solid black;
+}
+
+.startbutton:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.startbutton:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.game {
+    display: none;
 }
 
 /* Header */
@@ -57,3 +87,48 @@ body {
     font-size: 10pt;
 }
 
+/* Pokemon */
+
+.pokemonImage {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 40px 5px 0px 5px;
+    border: 10px solid #FFCB05;
+}
+
+.pokemonImage:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pokemonImage:active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.pokemon {
+    float: left;
+}
+
+.stat {
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    font-family: var(--title2-font);
+    font-size: 10pt;
+
+    margin-bottom: 50px;
+}
+
+.statbar {
+    background-color: #FFCB05;
+    border: 10px solid #FFCB05;
+    width: 350px;
+    height: 50px;
+    margin: 0px 5px 0px 5px;
+}
+
+.pokeName {
+    text-decoration: underline;
+}
+
+
+ 
