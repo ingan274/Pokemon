@@ -113,63 +113,67 @@ $(document).ready(function () {
 
             pokemon.appendTo('.allPoke'); // adding to after instructions 
         };
+    };
 
-        $(".individualpokemon").on('click', function () {
-            // assigning correct HP and Attack
-            userPokemon = ($(this).attr("idNum"));
-            userHP = pokemonSet[userPokemon].hp;
-            userAttack = pokemonSet[userPokemon].attack;
+    // Choosing Click Function
 
-            // moving selected pokemon to correct board
-            $('.instructions').hide()
-            $('.gameboard').show()
+    $(".individualpokemon").on("click", function () {
+        // assigning correct HP and Attack
+        userPokemon = ($(this).attr("idNum"));
+        userHP = pokemonSet[userPokemon].hp;
+        userAttack = pokemonSet[userPokemon].attack;
 
-            var userDiv = $("div[idNum=" + userPokemon + "]");
-            userDiv.attr("class", "currentPoke userDiv");
-            $(userDiv).detach().appendTo("#playercard"); // moving it to the player area
+        // moving selected pokemon to correct board
+        $('.instructions').hide()
+        $('.gameboard').show()
 
-            // moving remaining Pokemon to the Enemy setting
-            $(".individualpokemon").not(pokemonSet[userPokemon]).detach().appendTo("#remainingcards");
+        var userDiv = $("div[idNum=" + userPokemon + "]");
+        userDiv.attr("class", "currentPoke userDiv");
+        $(userDiv).detach().appendTo("#playercard"); // moving it to the player area
 
-            // adding classes to enemy div
-            $(".individualpokemon").not(pokemonSet[userPokemon]).attr("class", "enemyDiv enemyPoke col-6");
-            // changing attack to defend for enemy
-            for (var pokemonNotSelected of pokemonSet) {
-                defensePokemon = pokemonNotSelected.idnum;
-                if (defensePokemon != userPokemon) {
-                    $("div[idNum=" + defensePokemon + "] .statbar .pokeAttack").text("Def:" + pokemonSet[defensePokemon].defense);
-                } 
+        // changing attack to defend for enemy
+        for (var pokemonNotSelected of pokemonSet) {
+            defensePokemon = pokemonNotSelected.idnum;
+            if (defensePokemon != userPokemon) {
+                var enemyDiv = $("div[idNum=" + defensePokemon + "]");
+                // moving remaining Pokemon to the Enemy setting
+                $(enemyDiv).detach().appendTo("#remainingcards");
+                // adding classes to enemy div
+                $(enemyDiv).attr("class", "enemyDiv enemyPoke col-6");
+                $("div[idNum=" + defensePokemon + "] .statbar .pokeAttack").text("Def:" + pokemonSet[defensePokemon].defense);
             }
-        });
+        }
+    });
 
 
-        // 2. Select Current Opponent
-        $(".enemyDiv").on("click", ".enemyPoke", function () {
-            // if (!battling) {
-                // set up Hp and and Defense
-                enemyPokemon = parseInt($(this).attr("data-index"));
-                enemyHp = characters[enemyId].hp; 
-                enemyDefense = characters[enemyId].defense;
+    // 2. Select Current Opponent
+    $(".enemyDiv").on("click", function () {
+        debugger
+        // if (!battling) {
+        // set up Hp and and Defense
+        enemyPokemon = ($(this).attr("idNum"));
+        enemyHP = characters[enemyPokemon].hp;
+        enemyDefense = characters[enemyPokemon].defense;
 
-                var enemyDiv = $("div[data-index=" + enemyPokemon + "]");
-                enemyDiv.attr("class", "enemyDiv enemyPoke current-enemy"); //adds current-enemy class
-                //move Enemy to Battle area
-                $(enemyDiv).detach().appendTo("#enemycard"); 
-                battling = true;
+        var enemyDiv = $("div[idNum=" + enemyPokemon + "]");
+        enemyDiv.attr("class", "enemyDiv enemyPoke current-enemy"); //adds current-enemy class
+        //move Enemy to Battle area
+        $(enemyDiv).detach().appendTo("#enemycard");
+        battling = true;
 
-                $(".action").hide();
-                attackButton = $("<button>Attack</button>");
-                attackButton.addClass("attackbutton")
-                attackButton.appendTo(".current-enemy")
-
-            // }
-        });
+        $(".action").hide();
+        attackButton = $("<button>Attack</button>");
+        attackButton.addClass("attackbutton")
+        attackButton.appendTo(".current-enemy")
 
 
-        // 3. When clicking on "attack," attach will double and my HP will go down with their attach
-        // 4. WIN - opponent will leave the screen 
-        // 4A. Player selects new opponent
-        // 5. LOSE - game is reset
-    }
+        // }
+    });
+
+    // 3. When clicking on "attack," attach will double and my HP will go down with their attach
+    // 4. WIN - opponent will leave the screen 
+    // 4A. Player selects new opponent
+    // 5. LOSE - game is reset
+
 
 });
