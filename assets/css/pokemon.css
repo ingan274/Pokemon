@@ -16,7 +16,7 @@ font-family: 'Bangers', cursive; */
 }
 body {
     background: url(../img/pokeback.jpg);
-    background-size: 120%;
+    background-size: 165%;
 }
 
 /* Start Button */
@@ -87,14 +87,40 @@ body {
     font-size: 10pt;
 }
 
+/* Action */
+
+.action {
+    text-align: center;
+    margin: 6px auto;
+    padding: 10px 5px 10px 5px;
+    margin-top: 100px;
+    width: 90%;
+
+    color: white;
+    font-family: var(--title1-font);
+    font-size: 12pt;
+
+    background-color: black;
+    border: 5px solid white;
+}
+
+
 /* Pokemon */
 
 .pokemonImage {
+    display: block;
     width: 350px;
     height: 350px;
     background-color: rgba(255, 255, 255, 0.7);
-    margin: 40px 5px 0px 5px;
+    margin: 0px auto;
+    margin-top: 40px;
     border: 10px solid #FFCB05;
+    
+}
+
+.individualpokemon {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .pokemonImage:hover {
@@ -105,30 +131,35 @@ body {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.pokemon {
+.individualpokemon {
     float: left;
+}
+
+.enemyDiv {
+    display: inline-block;
+    margin: 0px auto;
 }
 
 .stat {
     text-align: center;
-    padding: 5px 5px 5px 5px;
+    margin: 0px auto;
+    padding: 5px auto;
     font-family: var(--title2-font);
     font-size: 10pt;
+    width: 100%;
 
     margin-bottom: 50px;
 }
 
 .statbar {
+    display: block;
     background-color: #FFCB05;
     border: 10px solid #FFCB05;
     width: 350px;
     height: 50px;
-    margin: 0px 5px 0px 5px;
+    margin: 10px auto;
 }
 
 .pokeName {
     text-decoration: underline;
 }
-
-
- 
