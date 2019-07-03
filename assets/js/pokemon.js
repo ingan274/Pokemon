@@ -100,7 +100,7 @@ $(document).ready(function () {
             // giving all pokemon a common class
             pokemon.addClass("individualpokemon");
             // giving each individual Div ID
-            pokemon.attr("idNum", selectedPokemon.idnum)
+            pokemon.attr("idNum", selectedPokemon.idnum);
             // giving each pokemon individual ID and class
             pokemon.append('<img src=' + selectedPokemon.img + " class='pokemonImage selectedPokemon' idNum=" + selectedPokemon.idnum + ">"); // adding associated image
 
@@ -116,16 +116,15 @@ $(document).ready(function () {
     };
 
     // Choosing Click Function
-
-    $(".individualpokemon").on("click", function () {
+    $(".individualpokemon").on("click touchstart", function () {
         // assigning correct HP and Attack
-        userPokemon = ($(this).attr("idNum"));
+        userPokemon = parseInt($(this).attr("idNum"));
         userHP = pokemonSet[userPokemon].hp;
         userAttack = pokemonSet[userPokemon].attack;
 
         // moving selected pokemon to correct board
-        $('.instructions').hide()
-        $('.gameboard').show()
+        $('.instructions').hide();
+        $('.gameboard').show();
 
         var userDiv = $("div[idNum=" + userPokemon + "]");
         userDiv.attr("class", "currentPoke userDiv");
@@ -145,13 +144,11 @@ $(document).ready(function () {
         }
     });
 
-
     // 2. Select Current Opponent
-    $(".enemyDiv").on("click", function () {
-        debugger
+    $(".enemyDiv").on("click touchstart", function () {
         // if (!battling) {
         // set up Hp and and Defense
-        enemyPokemon = ($(this).attr("idNum"));
+        enemyPokemon = parseInt($(this).attr("idNum"));
         enemyHP = characters[enemyPokemon].hp;
         enemyDefense = characters[enemyPokemon].defense;
 
