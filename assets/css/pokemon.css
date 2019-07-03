@@ -163,3 +163,29 @@ body {
 .pokeName {
     text-decoration: underline;
 }
+
+/* attack Button */
+
+.attackbutton {
+    display: block;
+    margin: 6px auto;
+    margin-top: 10px;
+    text-align: center;    
+    padding: 10px 5px 10px 5px;
+    width: 80%;
+    border-radius: 10px;
+
+    color: black;
+    font-family: var(--title1-font);
+    font-size: 10pt;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 5px solid black;
+}
+
+.attackbutton:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.attackbutton:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}

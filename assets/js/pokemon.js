@@ -85,6 +85,8 @@ $(document).ready(function () {
     var enemyHP;
     var enemyDefense;
 
+    var attackButton;
+
     var remainingPokemon;
 
     var battling = false;
@@ -134,15 +136,34 @@ $(document).ready(function () {
             // changing attack to defend for enemy
             for (var pokemonNotSelected of pokemonSet) {
                 defensePokemon = pokemonNotSelected.idnum;
-
-                $(".enemyDiv .statbar .pokeAttack").text("Def:" + pokemonSet[defensePokemon].defense);
-
-                console.log(pokemonSet[defensePokemon].defense)
+                if (defensePokemon != userPokemon) {
+                    $("div[idNum=" + defensePokemon + "] .statbar .pokeAttack").text("Def:" + pokemonSet[defensePokemon].defense);
+                } 
             }
         });
 
 
-        // 2. Select Opponent
+        // 2. Select Current Opponent
+        $(".enemyDiv").on("click", ".enemyPoke", function () {
+            // if (!battling) {
+                // set up Hp and and Defense
+                enemyPokemon = parseInt($(this).attr("data-index"));
+                enemyHp = characters[enemyId].hp; 
+                enemyDefense = characters[enemyId].defense;
+
+                var enemyDiv = $("div[data-index=" + enemyPokemon + "]");
+                enemyDiv.attr("class", "enemyDiv enemyPoke current-enemy"); //adds current-enemy class
+                //move Enemy to Battle area
+                $(enemyDiv).detach().appendTo("#enemycard"); 
+                battling = true;
+
+                $(".action").hide();
+                attackButton = $("<button>Attack</button>");
+                attackButton.addClass("attackbutton")
+                attackButton.appendTo(".current-enemy")
+
+            // }
+        });
 
 
         // 3. When clicking on "attack," attach will double and my HP will go down with their attach
