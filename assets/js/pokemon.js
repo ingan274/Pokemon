@@ -27,7 +27,7 @@ $(document).ready(function () {
             ogHp: 90,
             hp: 90,
             attack: 4,
-            defense: 15,
+            defense: 13,
             img: './assets/img/dugtrio.png'
         },
         {
@@ -154,6 +154,8 @@ $(document).ready(function () {
                 // adding classes to enemy div
                 $(enemyDiv).attr("class", "enemyDiv enemyPoke col-6");
                 $("div[idNum=" + defensePokemon + "] .statbar .pokeAttack").text("Def:" + pokemonSet[defensePokemon].defense);
+                // show instructgions to choose opponent next
+                $(".action").show();
             }
         }
     });
@@ -174,6 +176,7 @@ $(document).ready(function () {
             battling = true;
 
             $(".action").hide();
+
             attackButton = $("<button>Attack</button>");
             attackButton.addClass("attackbutton actionbutton")
             attackButton.appendTo(".current-enemy")
@@ -192,7 +195,7 @@ $(document).ready(function () {
         if (battling) {
             userHP -= enemyDefense;
             enemyHP -= userAttack;
-            userAttack = userAttack + pokemonSet[enemyPokemon].ogHp;
+            userAttack = userAttack + pokemonSet[userPokemon].attack;
             updateStats();
             progressReport();
         };
@@ -205,7 +208,7 @@ $(document).ready(function () {
         $("#enemycard .enemyPoke .statbar .pokeHP").text("HP:" + enemyHP);
 
         // adding info
-        $("#battleinfo").html("You took " + enemyDefense + " damage, while your opponent took " + userAttack + " damage. <br/> Your current HP: " + userHP + "<br/> Opponents current HP: " + enemyHP);
+        $("#battleinfo").html(userPokemonName + " took " + enemyDefense + " damage, while " + enemyPokemonName + " took " + userAttack + " damage. <br/> Your current HP: " + userHP + "<br/> Opponents current HP: " + enemyHP);
 
     }
 
@@ -247,12 +250,14 @@ $(document).ready(function () {
 		enemiesLeft = pokemonSet.length-1;
         battling = false;
 
-        $(".game").hide();
+        $(".game").show();
+        $(".instructions").show();
         $(".gameboard").hide();
-        $(".startbutton").show();
-		$(".userDiv").remove(); //remove player div
-		$(".current-enemy").remove();//remove current enemy div
-		$(".battleinfo").text(""); //reset battle text
+
+		$("#playercard .currentPoke").remove(); //remove player div
+        $("#enemycard .enemyPoke").remove();//remove current enemy div
+        $("#remainingcards .enemyPoke").remove();//remove current enemy div
+		$("#battleinfo").text(""); //reset battle text
 
         
         initiateGame();
