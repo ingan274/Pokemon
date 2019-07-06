@@ -17,7 +17,7 @@ $(document).ready(function () {
             idnum: 0,
             ogHp: 70,
             hp: 70,
-            attack: 2,
+            attack: 7,
             defense: 15,
             img: './assets/img/charmander.png'
         },
@@ -26,7 +26,7 @@ $(document).ready(function () {
             idnum: 1,
             ogHp: 90,
             hp: 90,
-            attack: 4,
+            attack: 6,
             defense: 13,
             img: './assets/img/dugtrio.png'
         },
@@ -35,7 +35,7 @@ $(document).ready(function () {
             idnum: 2,
             ogHp: 60,
             hp: 60,
-            attack: 2,
+            attack: 5,
             defense: 10,
             img: './assets/img/eve.png'
         },
@@ -44,7 +44,7 @@ $(document).ready(function () {
             idnum: 3,
             ogHp: 100,
             hp: 100,
-            attack: 3,
+            attack: 5,
             defense: 10,
             img: './assets/img/persian.png'
         },
@@ -53,7 +53,7 @@ $(document).ready(function () {
             idnum: 4,
             ogHp: 70,
             hp: 70,
-            attack: 3,
+            attack: 10,
             defense: 20,
             img: './assets/img/pikachu.png'
         },
