@@ -1,5 +1,7 @@
 # Pokémon | Catch 'Em All
 Pokémon themes RPG game! Select your Pokémon and see if you can catch them all! 
+<br>
+Play Game here: https://ingan274.github.io/Pokemon/
 
 # How to play
 * Select the character that you want to play as.
