@@ -141,7 +141,9 @@ body {
 }
 
 .individualpokemon {
-    float: left;
+    display: inline-block;
+    width: 32%;
+    margin: 0px auto;
 }
 
 .enemyDiv {

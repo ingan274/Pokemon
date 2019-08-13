@@ -77,8 +77,8 @@ $(document).ready(function () {
         $(".head").css("position", "fixed");
         $(".head").css("left", "0");
         $(".head").css("bottom", "0");
-        $(".head").css("font-size", "11px");
-        $(".head").css("width", "280px");
+        $(".head").css("font-size", "7px");
+        $(".head").css("width", "170px");
         $(".head").css("margin", "5px 5px 5px 5px");
         $(".head").css("padding", "5px 5px 5px 5px");
         initiateGame();
