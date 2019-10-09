@@ -16,5 +16,10 @@ Play Game here: https://ingan274.github.io/Pokemon/
 
 * If you are injured, you must retreat to a PokéCenter!
 
+## Future Developments
+* Additional levels
+* Add a high score leaderboard
+* supporting multiple players or users
+
 # About this game
 Week 4 assigment for the June 2019 cohort of the UCLA Coding Boot Camp. Built using jQuery.
